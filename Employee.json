@@ -1,0 +1,21 @@
+{
+    "employees": [{
+        "id": 1,
+        "name": "ND",
+        "city": "Mumbai",
+    "gender":"Male",
+    "department":"Web"
+    }, {
+        "id": 2,
+        "name": "Joy",
+        "city": "Delhi",
+    "gender":"Male",
+    "department":"DB"
+    },{
+        "id": 3,
+        "name": "Jack",
+        "city": "Kolkata",
+    "gender":"Male",
+    "department":"Web"
+    }]
+}

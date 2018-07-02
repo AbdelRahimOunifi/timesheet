@@ -1,0 +1,26 @@
+<div class="page">
+  <div class="h-100">
+    <div class="row align-items-center h-100">
+      <form class="form-container col-md-6 offset-md-3 col-8 offset-2">
+        <div class="text-center">
+          <img alt="Datarox Logo" src="assets\image\logo-datatox.svg" class="img-fluid">
+        </div>
+        <div>
+          <p class="text-justify">Insérer l'adresse e-mail que vous utilisez pour vous connecter à votre compte. Nous vous enverrons un e-mail avec des instructions pour choisir un nouveau mot de passe.</p>
+        </div>
+        <div>
+          <label for="inputPassword" class="sr-only">Mot de passe</label>
+          <input type="text" id="inputPassword" name="password" [(ngModel)]="resetemail" class="form-control" placeholder="Mot de passe" required>
+        </div>
+        <div>
+          <button class="btn btn-lg btn-secondary btn-block" (click)="logconsol()" type="submit">Valider </button>
+        </div>
+        <div>
+          <div class="text-right">
+            <a routerLink="/login">acces à la page de login </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
