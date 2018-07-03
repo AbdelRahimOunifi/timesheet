@@ -8,11 +8,11 @@
         <div>
           <div *ngIf="invalidlogin" class="alert alert-danger">Adresse email et/ou mot de passe invalide.</div>
           <label for="inputEmail" class="sr-only">Adresse email</label>
-          <input type="email" id="inputEmail" name="username" ngModel class="form-control" placeholder="Adresse email" required autofocus>
+          <input type="email" id="inputEmail" name="username" ngModel class="form-control" placeholder="Adresse email" autocomplete="username" required autofocus>
         </div>
         <div>
           <label for="inputPassword" class="sr-only">Mot de passe</label>
-          <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Mot de passe" required>
+          <input type="password" id="inputPassword" name="password" ngModel class="form-control" placeholder="Mot de passe" autocomplete="current-password" required>
         </div>
         <div>
           <button class="btn btn-lg btn-secondary btn-block" type="submit">Connexion</button>
