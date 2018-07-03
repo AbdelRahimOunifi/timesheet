@@ -32,14 +32,14 @@ export class ModpwdComponent implements OnInit {
           if (data.status === 1) {
             console.log('le nouveau mot de passe est ' + a);
             this.message = 'Votre nouveau mot de passe est ' + a + ' avec l\'id ' + this.id;
-            this.img = 'assets/image/icons8-checked.svg';
+            this.img = 'assets/image/checked.png';
           } else {
             console.log('returning false');
-            this.img = 'assets/image/icons8-cancel.svg';
+            this.img = 'assets/image/cancel.png';
           }
         });
     } else {
-      this.img = 'assets/image/icons8-cancel.svg';
+      this.img = 'assets/image/cancel.png';
     }
   }
 
