@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthServiceService } from '../../service/auth-service.service';
+import { AuthService } from '../../service/auth-service.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class ResetpwdComponent implements OnInit {
   private resetemail;
-  constructor(private router: Router,private auth: AuthServiceService ) { }
+  constructor(private router: Router, private auth: AuthService ) { }
 
   ngOnInit() {
   }
@@ -18,9 +18,9 @@ export class ResetpwdComponent implements OnInit {
     this.auth.resetpwd(this.resetemail).subscribe(
       data => {
         console.log('le status est :' + data.jwt);
-        if (data.status == 1) {
+        if (data.status === 1) {
           this.router.navigate(['/login']);
-        } 
+        }
       });
     console.log(this.resetemail);
   }

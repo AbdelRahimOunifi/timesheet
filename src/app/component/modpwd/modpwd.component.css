@@ -1,0 +1,23 @@
+.form-container{
+    border-radius: 25px;
+    border: 2px solid rgb(255, 63, 5);
+    padding: 20px;
+    color: #FFF;
+    -webkit-box-shadow: -2px 0px 52px 0px rgba(255,122,5,1);
+    -moz-box-shadow: -2px 0px 52px 0px rgba(255,122,5,1);
+    box-shadow: -2px 0px 52px 0px rgb(250, 117, 0);
+}
+a {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+}
+.page{
+    height: 100%;
+}
+div{
+    margin: 10px
+}
+.modal-dialog {
+    margin: 0 auto;
+}

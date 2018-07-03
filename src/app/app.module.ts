@@ -6,13 +6,17 @@ import { EditComponent } from './component/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { AuthServiceService } from './service/auth-service.service';
+import { AuthService } from './service/auth-service.service';
 import { ResetpwdComponent } from './component/resetpwd/resetpwd.component';
+import { ModpwdComponent } from './component/modpwd/modpwd.component';
+import { JwtModule, JwtHelperService } from '@auth0/angular-jwt';
+import { AuthGuard } from './service/auth-guard.service';
 
 const appRoutes: Routes = [
+  { path: 'pwdmod/:id', component: ModpwdComponent },
   { path: 'resetpwd', component: ResetpwdComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'edit', component: EditComponent },
+  { path: 'edit', component: EditComponent, canActivate : [AuthGuard] },
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: '**', redirectTo: '/login' }
 ];
@@ -23,15 +27,25 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     EditComponent,
-    ResetpwdComponent
+    ResetpwdComponent,
+    ModpwdComponent
   ],
   imports: [
-    BrowserModule, HttpClientModule,
+    BrowserModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('access_token');
+      }}
+    }) ,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [AuthServiceService],
+  providers: [AuthService,
+    JwtHelperService,
+    AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
